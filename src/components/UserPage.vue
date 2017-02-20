@@ -12,6 +12,20 @@
       <span>{{user.postalCode}}</span>
     </li>
   </ul>
+  <div class="row">
+    <div class="col-4 col-md-3">
+      <button type="button" class="btn btn-secondary"  v-on:click="removeUser">
+        حذف
+        <span class="fa fa-trash"></span>
+      </button>
+    </div>
+    <div class="col-4 col-md-3">
+      <button type="button" class="btn btn-secondary">
+        <span class="fa fa-edit"></span>
+        ویرایش
+      </button>
+    </div>
+  </div>
 </div>
 
 </template>
@@ -20,6 +34,7 @@
 import {
   findById
 } from '../data/unionUserData'
+import router from '../router'
 export default {
   name: 'userPage',
   data () {
@@ -37,6 +52,10 @@ export default {
     getUser () {
       const id = this.$route.params.id
       this.user = findById(id)
+    },
+    removeUser () {
+      this.$parent.removeUser(this.user.uid)
+      router.push('/')
     }
   }
 

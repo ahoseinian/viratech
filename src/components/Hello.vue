@@ -8,7 +8,7 @@
         class="nav-link
         list-group-item"
         active-class="active">
-        {{user.firstName}} 
+        {{user.firstName}}
       </router-link>
     </ul>
   </div>
@@ -24,8 +24,20 @@ export default {
   name: 'hello',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App',
       userData
+    }
+  },
+  methods: {
+    removeUser (id) {
+      this.userData = this.userData.filter(x => x.uid !== id)
+    },
+    changeUser (user) {
+      this.userData = this.userData.map(x => {
+        if (x.uid === user.uid) {
+          return Object.assign({}, user)
+        }
+        return user
+      })
     }
   }
 }
