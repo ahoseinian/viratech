@@ -1,0 +1,26 @@
+[{
+		"uid" : "gg-08",
+		"phone" : "77556699",
+		"country" : "Iran",
+		"city" : "Tabriz",
+		"postalCode" : "8855223366"
+	}, {
+		"uid" : "gg-12",
+		"phone" : "88553322",
+		"country" : "Iran",
+		"city" : "Mashhad",
+		"postalCode" : "9987564123"
+	}, {
+		"uid" : "gg-44",
+		"phone" : "88662277",
+		"country" : "Iran",
+		"city" : "Arak",
+		"postalCode" : "3399882277"
+	}, {
+		"uid" : "gg-99",
+		"phone" : "99885522",
+		"country" : "Iran",
+		"city" : "Tehran",
+		"postalCode" : "1234567890"
+	}
+]
