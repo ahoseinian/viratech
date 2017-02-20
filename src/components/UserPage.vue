@@ -14,7 +14,7 @@
           <span>{{user.postalCode}}</span>
         </li>
       </ul>
-      <div class="stick-to-bottom">
+      <div >
         <button type="button" class="btn btn-secondary btn-sm"  v-on:click="removeUser">
           <span class="fa fa-trash"></span>
           Remove
@@ -67,9 +67,3 @@ export default {
 }
 
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-
-
-</style>
