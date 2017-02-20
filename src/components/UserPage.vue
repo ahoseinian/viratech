@@ -1,29 +1,34 @@
 <template>
 <div class="card card-block">
-  <h3 class="card-title">{{user.firstName}} {{user.lastName}}</h3>
-  <h6 class="card-subtitle mb-2 text-muted">{{user.country}} {{user.city}}</h6>
-  <ul class="list-unstyled">
-    <li>
-      <span class="fa fa-phone fa-fw"></span>
-      <span>{{user.phone}}</span>
-    </li>
-    <li>
-      <span class="fa fa-envelope-o fa-fw"></span>
-      <span>{{user.postalCode}}</span>
-    </li>
-  </ul>
   <div class="row">
-    <div class="col-4 col-md-3">
-      <button type="button" class="btn btn-secondary"  v-on:click="removeUser">
-        حذف
-        <span class="fa fa-trash"></span>
-      </button>
+    <div class="col-md-7">
+      <h3 class="card-title">{{user.firstName}} {{user.lastName}}</h3>
+      <h6 class="card-subtitle mb-2 text-muted">{{user.country}} {{user.city}}</h6>
+      <ul class="list-unstyled">
+        <li>
+          <span class="fa fa-phone fa-fw"></span>
+          <span>{{user.phone}}</span>
+        </li>
+        <li>
+          <span class="fa fa-envelope-o fa-fw"></span>
+          <span>{{user.postalCode}}</span>
+        </li>
+      </ul>
+      <div class="stick-to-bottom">
+        <button type="button" class="btn btn-secondary btn-sm"  v-on:click="removeUser">
+          <span class="fa fa-trash"></span>
+          Remove
+        </button>
+        <router-link :to="{name: 'editUser', params:{id: user.uid}}">
+          <button type="button" class="btn btn-secondary btn-sm" >
+            <span class="fa fa-edit"></span>
+            Edit
+          </button>
+        </router-link>
+      </div>
     </div>
-    <div class="col-4 col-md-3">
-      <button type="button" class="btn btn-secondary">
-        <span class="fa fa-edit"></span>
-        ویرایش
-      </button>
+    <div class="col-md-5">
+      <router-view></router-view>
     </div>
   </div>
 </div>
